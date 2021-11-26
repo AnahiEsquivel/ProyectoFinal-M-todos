@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} 
+\usepackage{graphicx}
+\usepackage{ragged2e}
+
+\begin{document}
+	\title{Tecnológico de Monterrey\\Reporte Técnico:\\ Proyecto Final de Métodos Numéricos}
+	\author{Equipo 2}
+	\date{26 de noviembre del 2021}
+	\maketitle
+	\includegraphics[width=7cm, height=5cm]{creci.jpg}\\
+María Fernanda Gutiérrez Ornelas 	A01234243\\
+	Alfonso Iván Morales Valverde	    A01562011\\
+	Ana Sofia Miranda Jimenez          A01631272\\
+	Anahi Esquivel Valenzuela          A01235160\\
+	Sergio Eduardo Trejo Olivas 	    A012422091\\
+	Marcela Landero Barraza                  A01187873\\\\
+	
+	\textbf{Introducción}
+	
+Como parte del tercer parcial de la materia de Métodos Numéricos, el programa a trabajar incluía los temas:\\
+Regresión lineal\\
+Polinomio de Newton \\
+Integración numérica (Simpson)\\
+Euler , Heun, Ralston y Runge Kutta\\
+
+Los anteriores temas serán presentados como parte del proyecto final, siendo enfocados en el área de Biotecnología específicamente en el tema del Crecimiento Bacteriano. 
+El crecimiento bacteriano, se define como el aumento ordenado de las estructuras y los constituyentes celulares de un organismo. 
+
+Su comprensión y adhesión de temas como regresión lineal y polinomio de Newton permite crear un estudio más específico que arroje datos más concretos y realistas que nos permitan inocular un número conocido de cepas bacterianas, lo cual en la actualidad nos puede ayudar para la mejora de crecimiento de plantas, incrementación de la biodegradación de compuestos orgánicos tóxicos hasta incluso producir antibióticos a una escala industrial.  De ahí la importancia de la aplicación de métodos numéricos en la Biotecnología. \\\\ 
+
+    \textbf{Caso de Estudio con una ecuación diferencial}\\
+    Las ecuaciones diferenciales son de importancia básica en las matemáticas de la biología molecular porque muchas leyes y relaciones biológicas aparecen matemáticamente en forma de una ecuación diferencial.  La gran mayoría de modelos cuantitativos en biología celular y molecular se formulan en términos de ecuaciones diferenciales ordinarias (EDOs) para la evolución temporal de concentraciones de especies moleculares (Mihai et al., 2012).  
+    
+    Un problema importante es cómo el tamaño de la población de una especie determinada, por ejemplo, la división de células o bacterias, varía de un momento a otro. Sea xn la población de una especie en el momento n y xn + 1 la población en el momento n + 1. El cambio en el tamaño de la población durante el intervalo entre estos tiempos viene dado por la siguiente ecuación de crecimiento, también conocida como mapa logístico:\\
+    \includegraphics[width=8cm, height=6cm]{imagen1.png}\\
+    
+    donde x0 representa la población inicial en el momento 0, r es un número positivo correspondiente a una tasa de crecimiento general y el último término negativo representa una mayor competencia a medida que crece la población.
+     Los modelos compuestos de tales ecuaciones, que tratan el tiempo como si evolucionara en pasos discretos, son similares a los modelos de autómatas celulares o basados en agentes, en los que las reglas de la biología se incluyen en el mapeo. El crecimiento logístico continuo, por ejemplo, se describe mediante la extensión del mapa logístico discreto, dado por la siguiente ecuación diferencial ordinaria:\\
+     \includegraphics[width=8cm, height=6cm]{imagen2.png}\\
+    
+    donde x(t) denota el tamaño de la población en el tiempo t, la derivada dx(t) / dt la tasa de cambio de x(t) y t puede ser cualquier número positivo. 
+    Muchos de los modelos computacionales más conocidos para procesos biológicos que evolucionan continuamente en el tiempo se expresan como conjuntos de EDOs acopladas. Por ejemplo, la EDO logística descrita anteriormente tiene dos equilibrios que son estables o inestables dependiendo del parámetro r. Para r <0, el equilibrio x = 0 es estable y el equilibrio x = 1 es inestable. Pero si r aumenta y el sistema se considera para r> 0, el equilibrio x = 0 se vuelve inestable y el equilibrio x = 1 se vuelve estable. Eso significa que cada solución de la EDO logística converge a 0 para r <0 y a 1 para r> 0 independientemente de las condiciones iniciales y el sistema cambia su comportamiento de estabilidad en r = 0 (Daun et al., 2012).  \\\\
+    \textbf{Descripción del Problema}\\ \\
+    Simpson\\
+    Al aislar ciertos tipos de bacterias en medios con un grado de selectividad de bajo a medio, se recurren a herramientas técnicas, tal es el caso de pruebas metabólicas, reacciones de polimerasa en cadena, y resiembras en cultivos con mayor selectividad. En muchos casos, se pueden acudir a herramientas informáticas para llevar a cabo cálculos como el área bajo la curva de crecimiento bacteriano, esta nos permite compararla con ciertas fuentes de datos bibliográficos y de esta manera obtener una comparación entre el crecimiento exponencial de distintas especies y poder descartar contaminación de algún tipo sin tener que acudir al consumo de insumos o desperdiciar tiempo de práctica (Tonner, Darnell, Engelhardt y Schmid, 2016).\\\\
+    A continuación se hace uso del método simpson para calcular el área bajo la curva de P. fluorescens, para comparar dicho resultado con la bibliografía disponible y de esta manera obtener una “confirmación” más del organismo de interés a cultivar (Valclare, 2002). \\\\
+    Polinomio de Newton\\ Se quiere determinar el crecimiento en incubadora de un organismo desconocido en orden para lograr determinar a qué género y a que especie pertenece así como para obtener más información, esto se logrará utilizando el método de polinomio de newton para descubrir cuántas unidades formadoras de colonias se generan en un plazo de 30 minutos\\\\
+    Regresión lineal\\El crecimiento bacteriano implica la división celular, llevando a un aumento exponencial del número de células iniciales de una población.\\
+    Excel:Para poder dar solución a una problemática de crecimiento bacteriano por este método, se graficara la absorbancia vs el tiempo que tarda en crecer una bacteria\\\\
+     \textbf{Resultados}\\
+     Resultados de Simpson\\
+     \includegraphics[width=10cm, height=8cm]{simpson.png}\\\\
+    Resultados de Polinomio de Newton\\
+    \includegraphics[width=10cm, height=8cm]{newton.png}\\\\
+    Resultados de Regresión lineal\\
+    \includegraphics[width=10cm, height=8cm]{regresion.png}\\
+    \textbf{Conclusiones}\\
+    Todos los métodos aplicados proporcionan grandes ventajas para la obtención de datos concretos que se requieren dentro de la aplicación del crecimiento bacteriano. Podemos concluir que métodos eficaces que acelera la obtención de datos. \\\\
+    Simpson:\\
+    A partir del uso del método simpson podemos determinar el área bajo la curva de  la fase relevante del crecimiento bacteriano, tal y como se presenta con el uso de los dos softwares previamente mencionados. Como podemos ver por los resultados obtenidos se obtuvo un área bajo la curva que en sí concuerda con los resultados registrados de crecimiento de  P. fluorescens. No obstante, se sugiere el uso de un medio con mayor selectividad para confirmar definitivamente los resultados numéricos obtenidos \\\\
+    Polinomio de Newton:\\
+    En conclusión, los datos obtenidos nos permitieron definir a este organismo como el de una bacteria, de la misma manera nos arrojó el número de Unidades formadoras de colonias en 30 minutos, siendo este de 380 colonias\\\\
+    Regresión lineal:\\
+    Se logró determinar en qué tiempo se duplicarían las bacterias mediante un problema de regresión lineal, como se puede observar R elevado al 2 tiene un valor de 0.9518 por lo que se puede deducir que el modelo es bueno debido a qué este valor se considera bueno a partir de que sea mayor de 0.6\\Como podemos observar, así como en el archivo de Excel se puso obtener la misma gráfica en Matlab así como la ecuación lineal Y= 0.0037x-0.1347, obteniendo un coeficiente de correlación de 0.9756 lo cual es razonable ya que al sacar raíz cuadrad de R elevado 2 obtenida de excel da ese valor, se comprueba el modelo tanto como en un programa como en otro dándonos el mismo resultado.\\\\\\
+    Referencias:\\
+    Bañuelos, J. (2020). Calcular tiempo de duplicación (generación) bacteriano en excel. Calcular Tiempo de duplicación (generación) bacteriano en Excel - YouTube\\\\
+    Tonner, P., Darnell, C., Engelhardt, B., y Schmid, A. (2016). Detecting differential growth of microbial populations with Gaussian process regression. Genome Research, 27(2), 320-333. doi: 10.1101/gr.210286.116\\\\
+    Valclare, M. (2002). Retrieved 26 November 2021, from http://sedici.unlp.edu.ar/bitstream/handle/10915/2685/5Caracterizaciónmicrobiológica.pdf?sequence=10isAllowed=y
+    
+    
+\end{document}
